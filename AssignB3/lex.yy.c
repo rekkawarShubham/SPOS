@@ -375,8 +375,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 3
-#define YY_END_OF_BUFFER 4
+#define YY_NUM_RULES 4
+#define YY_END_OF_BUFFER 5
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -386,7 +386,7 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[9] =
     {   0,
-        0,    0,    4,    2,    3,    1,    2,    0
+        0,    0,    5,    2,    3,    1,    2,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -460,10 +460,10 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "count.l"
-#line 2 "count.l"
-#include<stdio.h>
-int lcount=0,ccount=0,wcount=0;
+#line 1 "practiceb3.l"
+#line 2 "practiceb3.l"
+  #include<stdio.h>
+  int lcount=0,wcount=0,ccount=0;
 #line 468 "lex.yy.c"
 
 #define INITIAL 0
@@ -682,7 +682,7 @@ YY_DECL
 		}
 
 	{
-#line 5 "count.l"
+#line 6 "practiceb3.l"
 
 #line 688 "lex.yy.c"
 
@@ -744,20 +744,25 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 6 "count.l"
+#line 7 "practiceb3.l"
 {lcount++;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 7 "count.l"
-{wcount++,ccount+=yyleng;}
+#line 8 "practiceb3.l"
+{wcount++,ccount+=yyleng;} 
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "count.l"
+#line 9 "practiceb3.l"
+{ccount++;}	
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 10 "practiceb3.l"
 ECHO;
 	YY_BREAK
-#line 761 "lex.yy.c"
+#line 766 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1758,14 +1763,15 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 9 "count.l"
+#line 10 "practiceb3.l"
 
 
 int yywrap(){return 1;}
-int main(int argc,char*argv[]){
-	yyin=fopen(argv[1],"r");
-	yylex();
-	printf("\nLine=%d\nWord Count=%d\nCharacter Count=%d",lcount,wcount,ccount);
-	return 0;
+int main(int argc,char *argv[])
+{
+   yyin = fopen(argv[1],"r");
+   yylex();
+   printf("\nLine Count:%d\nWord Count:%d\nChar Count:%d\n",lcount,wcount,ccount);
+  return 0;	
 }
 

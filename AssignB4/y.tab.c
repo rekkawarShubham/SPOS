@@ -62,11 +62,11 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "declaration.y" /* yacc.c:339  */
+#line 1 "pracb4.y" /* yacc.c:339  */
 
-	#include<stdio.h>
-	void yyerror(char *);
-        int yylex();
+  #include<stdio.h>
+   void yyerror(char *);
+   int yylex();
 
 #line 72 "y.tab.c" /* yacc.c:339  */
 
@@ -105,33 +105,33 @@ extern int yydebug;
   {
     INT = 258,
     FLOAT = 259,
-    AS = 260,
-    VD = 261,
+    CHAR = 260,
+    BL = 261,
     INTD = 262,
-    SC = 263,
-    NL = 264,
-    COMMA = 265,
-    CHAR = 266,
-    CHVAL = 267,
-    BL = 268,
-    BLVAL = 269,
-    REAL = 270
+    FD = 263,
+    COMMA = 264,
+    CHVAL = 265,
+    VD = 266,
+    BLVAL = 267,
+    AS = 268,
+    SC = 269,
+    NL = 270
   };
 #endif
 /* Tokens.  */
 #define INT 258
 #define FLOAT 259
-#define AS 260
-#define VD 261
+#define CHAR 260
+#define BL 261
 #define INTD 262
-#define SC 263
-#define NL 264
-#define COMMA 265
-#define CHAR 266
-#define CHVAL 267
-#define BL 268
-#define BLVAL 269
-#define REAL 270
+#define FD 263
+#define COMMA 264
+#define CHVAL 265
+#define VD 266
+#define BLVAL 267
+#define AS 268
+#define SC 269
+#define NL 270
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -391,7 +391,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  18
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   42
+#define YYLAST   40
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  16
@@ -448,9 +448,9 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,     9,     9,     9,     9,     9,    10,    11,    12,    13,
-      16,    16,    16,    16,    17,    17,    17,    17,    18,    18,
-      18,    18,    19,    19,    19,    19
+       0,     9,     9,     9,     9,     9,    11,    12,    13,    14,
+      17,    17,    17,    17,    18,    18,    18,    18,    19,    19,
+      19,    19,    20,    20,    20,    20
 };
 #endif
 
@@ -459,10 +459,10 @@ static const yytype_uint8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "INT", "FLOAT", "AS", "VD", "INTD", "SC",
-  "NL", "COMMA", "CHAR", "CHVAL", "BL", "BLVAL", "REAL", "$accept", "s",
-  "type1", "type2", "type3", "type4", "varlist", "varlist2", "varlist3",
-  "varlist4", YY_NULLPTR
+  "$end", "error", "$undefined", "INT", "FLOAT", "CHAR", "BL", "INTD",
+  "FD", "COMMA", "CHVAL", "VD", "BLVAL", "AS", "SC", "NL", "$accept", "s",
+  "type1", "type2", "type3", "type4", "varlist", "varlist1", "varlist2",
+  "varlist3", YY_NULLPTR
 };
 #endif
 
@@ -476,10 +476,10 @@ static const yytype_uint16 yytoknum[] =
 };
 # endif
 
-#define YYPACT_NINF -27
+#define YYPACT_NINF -26
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-27)))
+  (!!((Yystate) == (-26)))
 
 #define YYTABLE_NINF -1
 
@@ -490,12 +490,12 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       1,     0,    11,    12,    19,     7,   -27,   -27,   -27,   -27,
-       3,    18,     5,    20,     6,    21,    14,    22,   -27,     2,
-       0,    23,    16,    11,    24,    15,    12,    25,    26,    19,
-      27,    28,   -27,   -27,    29,   -27,   -27,    31,   -27,   -27,
-      32,   -27,   -27,     0,    11,    12,    19,   -27,   -27,   -27,
-     -27
+       9,     5,     6,     7,     8,    20,   -26,   -26,   -26,   -26,
+      -5,    11,    -4,    12,    -3,    13,    -2,    14,   -26,     5,
+      22,    15,     6,    23,    17,     7,    24,    18,     8,    25,
+      21,   -26,    26,   -26,   -26,    29,   -26,   -26,    30,   -26,
+     -26,    31,   -26,     5,     6,     7,     8,   -26,   -26,   -26,
+     -26
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -504,17 +504,17 @@ static const yytype_int8 yypact[] =
 static const yytype_uint8 yydefact[] =
 {
        0,     0,     0,     0,     0,     0,     2,     3,     4,     5,
-      11,     0,    15,     0,    19,     0,    23,     0,     1,     0,
+      10,     0,    14,     0,    18,     0,    22,     0,     1,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,    10,    12,     6,    14,    16,     7,    18,    20,     8,
-      22,    24,     9,     0,     0,     0,     0,    13,    17,    21,
+       0,    11,    12,     6,    15,    16,     7,    19,    20,     8,
+      23,    24,     9,     0,     0,     0,     0,    13,    17,    21,
       25
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -27,   -27,   -27,   -27,   -27,   -27,   -20,   -22,   -24,   -26
+     -26,   -26,   -26,   -26,   -26,   -26,   -19,   -21,   -23,   -25
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
@@ -528,31 +528,31 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-      32,    35,    38,    41,     1,     2,    10,    18,    19,    31,
-      22,    25,     3,    20,     4,    23,    26,    12,    14,    28,
-      50,    49,    48,    47,    29,    16,    21,    37,    24,    27,
-      30,    34,    33,    36,    39,     0,    42,     0,    43,    44,
-      40,    45,    46
+      31,    34,    37,    40,    19,    22,    25,    28,    20,    23,
+      26,    29,     1,     2,     3,     4,    10,    12,    14,    16,
+      18,    50,    49,    48,    47,    21,    24,    27,    30,    32,
+      33,    35,    36,    39,    38,    43,    42,    41,    44,    45,
+      46
 };
 
-static const yytype_int8 yycheck[] =
+static const yytype_uint8 yycheck[] =
 {
-      20,    23,    26,    29,     3,     4,     6,     0,     5,     7,
-       5,     5,    11,    10,    13,    10,    10,     6,     6,     5,
-      46,    45,    44,    43,    10,     6,     8,    12,     8,     8,
-       8,    15,     9,     9,     9,    -1,     9,    -1,    10,    10,
-      14,    10,    10
+      19,    22,    25,    28,     9,     9,     9,     9,    13,    13,
+      13,    13,     3,     4,     5,     6,    11,    11,    11,    11,
+       0,    46,    45,    44,    43,    14,    14,    14,    14,     7,
+      15,     8,    15,    15,    10,     9,    15,    12,     9,     9,
+       9
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     3,     4,    11,    13,    17,    18,    19,    20,    21,
-       6,    22,     6,    23,     6,    24,     6,    25,     0,     5,
-      10,     8,     5,    10,     8,     5,    10,     8,     5,    10,
-       8,     7,    22,     9,    15,    23,     9,    12,    24,     9,
-      14,    25,     9,    10,    10,    10,    10,    22,    23,    24,
+       0,     3,     4,     5,     6,    17,    18,    19,    20,    21,
+      11,    22,    11,    23,    11,    24,    11,    25,     0,     9,
+      13,    14,     9,    13,    14,     9,    13,    14,     9,    13,
+      14,    22,     7,    15,    23,     8,    15,    24,    10,    15,
+      25,    12,    15,     9,     9,     9,     9,    22,    23,    24,
       25
 };
 
@@ -568,8 +568,8 @@ static const yytype_uint8 yyr1[] =
 static const yytype_uint8 yyr2[] =
 {
        0,     2,     1,     1,     1,     1,     4,     4,     4,     4,
-       3,     1,     3,     5,     3,     1,     3,     5,     3,     1,
-       3,     5,     3,     1,     3,     5
+       1,     3,     3,     5,     1,     3,     3,     5,     1,     3,
+       3,     5,     1,     3,     3,     5
 };
 
 
@@ -1246,26 +1246,26 @@ yyreduce:
   switch (yyn)
     {
         case 6:
-#line 10 "declaration.y" /* yacc.c:1646  */
-    {printf("\nValid Integer declaration");return 0;}
+#line 11 "pracb4.y" /* yacc.c:1646  */
+    {printf("\nVALID INTEGER DECLARATION");}
 #line 1252 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 11 "declaration.y" /* yacc.c:1646  */
-    {printf("\nValid Float Declaration");return 0;}
+#line 12 "pracb4.y" /* yacc.c:1646  */
+    {printf("\nVALID FLOAT DECLARATION");}
 #line 1258 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 12 "declaration.y" /* yacc.c:1646  */
-    {printf("\n Valid Char Declaration");return 0;}
+#line 13 "pracb4.y" /* yacc.c:1646  */
+    {printf("\nVALID CHAR DECLARATION");}
 #line 1264 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 13 "declaration.y" /* yacc.c:1646  */
-    {printf("\n Valid Boolean Declaration");return 0;}
+#line 14 "pracb4.y" /* yacc.c:1646  */
+    {printf("\nVALID BOOLEAN DECLARATION");}
 #line 1270 "y.tab.c" /* yacc.c:1646  */
     break;
 
@@ -1498,12 +1498,12 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 20 "declaration.y" /* yacc.c:1906  */
+#line 22 "pracb4.y" /* yacc.c:1906  */
 
 
 void yyerror(char *s)
 {
-	fprintf(stderr,"ERROr:%s",s);
+  fprintf(stderr,"\nErrors:%s",s);
 }
 int main(){
 yyparse();

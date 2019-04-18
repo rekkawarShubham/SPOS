@@ -7,10 +7,10 @@
 
 %% 
 s:type1|type2|type3|type4;
-type1:INT varlist SC NL {printf("\nValid Integer declaration");return 0;};
+type1:INT varlist SC NL    {printf("\nValid Integer declaration");return 0;};
 type2:FLOAT varlist2 SC NL {printf("\nValid Float Declaration");return 0;};
 type3: CHAR varlist3 SC NL {printf("\n Valid Char Declaration");return 0;};
-type4: BL varlist4 SC NL {printf("\n Valid Boolean Declaration");return 0;};
+type4: BL varlist4 SC NL   {printf("\n Valid Boolean Declaration");return 0;};
 
 
 varlist: VD AS INTD |VD|VD COMMA varlist|VD AS INTD COMMA varlist; 

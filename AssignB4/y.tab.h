@@ -47,33 +47,33 @@ extern int yydebug;
   {
     INT = 258,
     FLOAT = 259,
-    AS = 260,
-    VD = 261,
+    CHAR = 260,
+    BL = 261,
     INTD = 262,
-    SC = 263,
-    NL = 264,
-    COMMA = 265,
-    CHAR = 266,
-    CHVAL = 267,
-    BL = 268,
-    BLVAL = 269,
-    REAL = 270
+    FD = 263,
+    COMMA = 264,
+    CHVAL = 265,
+    VD = 266,
+    BLVAL = 267,
+    AS = 268,
+    SC = 269,
+    NL = 270
   };
 #endif
 /* Tokens.  */
 #define INT 258
 #define FLOAT 259
-#define AS 260
-#define VD 261
+#define CHAR 260
+#define BL 261
 #define INTD 262
-#define SC 263
-#define NL 264
-#define COMMA 265
-#define CHAR 266
-#define CHVAL 267
-#define BL 268
-#define BLVAL 269
-#define REAL 270
+#define FD 263
+#define COMMA 264
+#define CHVAL 265
+#define VD 266
+#define BLVAL 267
+#define AS 268
+#define SC 269
+#define NL 270
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
